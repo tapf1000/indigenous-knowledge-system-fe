@@ -1,0 +1,10 @@
+input {
+    border-radius: 30px;
+    width: 60%;
+    height: 3rem;
+    margin: 20px;
+    padding: 2px 3px 2px 3px;
+    text-align: center;
+    font-size: medium;
+    font-style: oblique -90deg;
+  }
