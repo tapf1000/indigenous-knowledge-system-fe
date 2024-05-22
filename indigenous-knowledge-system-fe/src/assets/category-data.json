@@ -1,0 +1,73 @@
+[
+    {
+        "catName": "insects",
+        "categoryValues": [
+            {
+            "val": "termintes",
+            "characteristicEvaluation": {
+                "characteristic": "Active and coming out of the ground",
+                "evaluation": "Rain in the short term"
+                }
+            },
+            {
+                "val": "spiders",
+                "characteristicEvaluation": {
+                    "characteristic": "Dew on the cob-webs in the morning",
+                    "evaluation": "Rain in the short term"
+                }
+            },
+            {
+                "val": "mosquiotoes",
+                "characteristicEvaluation": {
+                    "characteristic": "Mosquitoes typically show up in the hot/dry season throughout rain season",
+                    "evaluation": "Rain in the long term (~3 months)"
+                }
+            }
+        ]
+    },
+    {
+        "catName": "vegetation",
+        "categoryValues": [
+            {
+            "val": "weeds",
+            "characteristicEvaluation": {
+                "characteristic": "Leaves broaden exposing more surface area",
+                "evaluation": "Rain in the short term/ onset of rain season"
+                }
+            },
+            {
+                "val": "flowers - jacaranda tree",
+                "characteristicEvaluation": {
+                    "characteristic": "Bloom",
+                    "evaluation": "Rain in the short term (~2-3 months)"
+                }
+            },
+            {
+                "val": "pod plants",
+                "characteristicEvaluation": {
+                    "characteristic": "Pods harden in the hot/dry season to mature seeds and expoes them in rain season",
+                    "evaluation": "Rain in the long term (~3 months)"
+                }
+            }
+        ]
+    },
+    {
+        "catName": "animals",
+        "categoryValues": [
+            {
+            "val": "Elephants",
+            "characteristicEvaluation": {
+                "characteristic": "Psuedo-migration, to head towards direction where rain is coming from",
+                "evaluation": "Rain in the short term"
+                }
+            },
+            {
+                "val": "Crocodiles",
+                "characteristicEvaluation": {
+                    "characteristic": "Migrate to larger bodies of water",
+                    "evaluation": "Will be a drought year"
+                }
+            }
+        ]
+    }
+]

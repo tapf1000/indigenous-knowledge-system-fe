@@ -1,1 +1,11 @@
-<p>knowledge-base works!</p>
+<div class="container-fluid">
+    <div class="column cat-val">
+        <div *ngFor="let categoryValue of categoryValues">
+            <h3>{{categoryValue.value}}</h3>
+            <hr id="divider"/> 
+        </div>          
+    </div>
+    <div class="column char-eval">
+        <app-knowledge-system></app-knowledge-system>
+    </div>
+  </div>

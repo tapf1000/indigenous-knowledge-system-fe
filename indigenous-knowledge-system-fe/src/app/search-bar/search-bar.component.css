@@ -1,5 +1,7 @@
 input {
     border-radius: 30px;
+    
+    border: 1.5px solid burlywood;
     width: 60%;
     height: 3rem;
     margin: 20px;

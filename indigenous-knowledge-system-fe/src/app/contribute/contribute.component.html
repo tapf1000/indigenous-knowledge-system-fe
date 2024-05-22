@@ -1,1 +1,21 @@
-<p>contribute works!</p>
+<form>
+    <div>
+    <label for="category">Category:</label>
+    <select name="category" [(ngModel)]="category">
+        <option [value]="categoryName" *ngFor="let categoryName of categoryNames">{{categoryName}}</option>
+      </select>
+    </div>
+    <div>
+        <label for="categoryItem">CategoryItem:</label>
+        <input type="categoryItem" id="categoryItem" name="categoryItem" [(ngModel)]="categoryItem" placeholder="">
+    </div>
+    <div>
+      <label for="characteristic">Characteristic:</label>
+      <input type="characteristic" id="characteristic" name="characteristic" [(ngModel)]="characteristic">
+    </div>
+    <div>
+        <label for="evaluation">Evaluation:</label>
+        <input type="evaluation" id="evaluation" name="evaluation" [(ngModel)]="evaluation">
+    </div>
+    <button type="submit" (click)="submitCategory()" [disabled]="disabled()">SAVE</button>
+  </form>

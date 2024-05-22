@@ -1,0 +1,32 @@
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  select, input {
+    margin-bottom: auto;
+    width: 100%;
+    padding: 5px;
+    border: 1px solid burlywood;
+    border-radius: 4px;
+  }
+  
+  label {
+    width: 1000px;
+    font-weight: bold;
+    font-size: x-large;
+    font-style: oblique;
+    color: #6d7df4;
+  }
+  
+  button {
+    padding: 10px 20px;
+    background-color: rgb(231, 238, 238);
+    color: #6d7df4;
+    border: 1px solid burlywood;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 25px;
+    width: 80%;
+  }

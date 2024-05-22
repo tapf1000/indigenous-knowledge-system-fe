@@ -1,0 +1,36 @@
+.container-fluid {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    border: 1px solid burlywood;
+    background-color: rgb(231, 238, 238) !important;
+  }
+  
+  .column {
+    height: 100%;
+  }
+  
+  .column:first-child {
+    width: 33.33%;
+    background-color: #f1f1f1;
+  }
+  
+  .column:last-child {
+    width: 66.66%;
+    background-color: #e9e9e9;
+  }
+
+  #divider{
+    background-color: burlywood;
+    padding: 0.125px;
+    width: 85%;
+  }
+
+  h3{
+    color: #6d7df4;
+    font-style: oblique;
+  }
+
+  .cat-val{
+    margin: 30px;
+  }

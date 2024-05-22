@@ -1,0 +1,34 @@
+.cat-main{
+    background-color: rgb(231, 238, 238);
+    height: 650px;    
+    border: 1px solid burlywood;
+}
+
+.cat-container{
+    position: relative;
+}
+
+.inline-div{
+    display: block;
+}
+
+a{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 85px;
+    display: inline;
+    padding: 10px;
+    font-size: x-large;
+    font-style: oblique;
+}
+
+#divider{
+    background-color: burlywood;
+    padding: 0.125px;
+    width: 85%;
+  }
+
+img{
+    margin: 30px;
+}
+  

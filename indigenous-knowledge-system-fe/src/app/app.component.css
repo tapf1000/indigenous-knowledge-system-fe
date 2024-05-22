@@ -3,3 +3,7 @@ app-search-bar {
     justify-content: center;
     align-items: center;
   }
+
+  div{
+    padding: 15px;
+  }

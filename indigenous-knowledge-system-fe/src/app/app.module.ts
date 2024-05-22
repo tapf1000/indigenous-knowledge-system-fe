@@ -9,6 +9,8 @@ import { ContributeComponent } from './contribute/contribute.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { KnowledgeBaseComponent } from './knowledge-base/knowledge-base.component';
 import { KnowledgeSystemComponent } from './knowledge-system/knowledge-system.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { KnowledgeSystemComponent } from './knowledge-system/knowledge-system.co
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

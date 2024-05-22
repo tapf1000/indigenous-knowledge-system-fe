@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class KnowledgeSystemComponent {
 
+  characteristic: string = "Active and coming out of the ground, air bourne variants occasionally visibly every other day.";
+  evaluation: string = "Rain in the short term, 2-3 weeks.";
+
 }
