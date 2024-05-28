@@ -1,7 +1,7 @@
 <div class="container-fluid">
     <div class="column cat-val">
         <div *ngFor="let categoryValue of categoryValues">
-            <h3>{{categoryValue.value}}</h3>
+            <button (click)="showKnowledgeSystem(categoryValue.value)">{{categoryValue.value}}</button>
             <hr id="divider"/> 
         </div>          
     </div>

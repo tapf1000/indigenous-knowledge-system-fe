@@ -1,13 +1,26 @@
-import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
+import { CharacteristicEvaluation } from 'src/util/util';
 
 @Component({
   selector: 'app-knowledge-system',
   templateUrl: './knowledge-system.component.html',
   styleUrls: ['./knowledge-system.component.css']
 })
-export class KnowledgeSystemComponent {
+export class KnowledgeSystemComponent implements OnInit {
 
-  characteristic: string = "Active and coming out of the ground, air bourne variants occasionally visibly every other day.";
-  evaluation: string = "Rain in the short term, 2-3 weeks.";
+  characteristicEvaluation!: CharacteristicEvaluation
 
+  constructor(private http: HttpClient){}
+
+  ngOnInit(): void {
+    
+  }
+
+  public retrieveCharacteristicEval(catVal: string){
+    this.http.get<CharacteristicEvaluation>(`http://localhost:8080/api/v1/char-eval/${catVal}`).subscribe(data => {
+      this.characteristicEvaluation = data
+    });
+
+  }
 }

@@ -24,9 +24,9 @@ export class ContributeComponent implements OnInit{
   constructor(private http: HttpClient) {}
 
   ngOnInit() {
-    this.http.get<Category[]>('../../assets/category-data.json').subscribe(data => {
-      this.categories = data;
-      this.categoryNames = this.categories.flatMap(c => c.catName);
+    this.http.get<Category[]>('http://localhost:8080/api/v1/categories').subscribe(resp => {
+      this.categories = resp;
+      this.categoryNames = this.categories.map(c => c.catName);
     });
   }
 
@@ -36,7 +36,7 @@ export class ContributeComponent implements OnInit{
       "evaluation": this.evaluation
     };
     this.categoryValue = {
-      "value": this.category,
+      "value": this.categoryItem,
       "characteristicEvaluation": this.characteristicEvaluation
     };
     this.savedCategory = {

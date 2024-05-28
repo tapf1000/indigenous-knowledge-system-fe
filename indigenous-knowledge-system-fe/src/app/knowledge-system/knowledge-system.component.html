@@ -1,5 +1,5 @@
-<div class="data-container">
+<div class="data-container" *ngIf="characteristicEvaluation">
     <h4>Characteristic</h4>
-    <p>{{characteristic}}</p>
-    <p>Evaluation: <small>{{evaluation}}</small></p>
+    <p>{{characteristicEvaluation.characteristic}}</p>
+    <p>Evaluation: <small>{{characteristicEvaluation.evaluation}}</small></p>
 </div>

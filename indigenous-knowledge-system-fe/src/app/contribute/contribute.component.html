@@ -1,21 +1,24 @@
 <form>
     <div>
-    <label for="category">Category:</label>
-    <select name="category" [(ngModel)]="category">
-        <option [value]="categoryName" *ngFor="let categoryName of categoryNames">{{categoryName}}</option>
-      </select>
+      <label for="category">Category:</label>
+      <div class="combined-input">
+        <input id="inputText"id="inputText" type="text" placeholder="Select an option from existin categories or type to add new category" name="category" [(ngModel)]="category">
+        <select id="selectDropdown"id="selectDropdown" name="category" [(ngModel)]="category" *ngIf="categoryNames.length > 0">
+          <option [value]="categoryName" *ngFor="let categoryName of categoryNames">{{categoryName}}</option>
+        </select>
+      </div>
     </div>
     <div>
         <label for="categoryItem">CategoryItem:</label>
-        <input type="categoryItem" id="categoryItem" name="categoryItem" [(ngModel)]="categoryItem" placeholder="">
+        <input type="text" id="basic-input" name="categoryItem" [(ngModel)]="categoryItem" placeholder="">
     </div>
     <div>
       <label for="characteristic">Characteristic:</label>
-      <input type="characteristic" id="characteristic" name="characteristic" [(ngModel)]="characteristic">
+      <input type="text" id="basic-input" name="characteristic" [(ngModel)]="characteristic">
     </div>
     <div>
         <label for="evaluation">Evaluation:</label>
-        <input type="evaluation" id="evaluation" name="evaluation" [(ngModel)]="evaluation">
+        <input type="text" id="basic-input" name="evaluation" [(ngModel)]="evaluation">
     </div>
     <button type="submit" (click)="submitCategory()" [disabled]="disabled()">SAVE</button>
   </form>

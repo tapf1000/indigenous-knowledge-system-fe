@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import {Category, CategoryValue, CharacteristicEvaluation} from '../../util/util';
+import {CategoryValue, CharacteristicEvaluation} from '../../util/util';
+import { ActivatedRoute } from '@angular/router';
+import { KnowledgeSystemComponent } from '../knowledge-system/knowledge-system.component';
 
 
 @Component({
@@ -12,14 +14,34 @@ export class KnowledgeBaseComponent implements OnInit {
   
   categoryValues: CategoryValue[] = [];
   characteristicEvaluation: CharacteristicEvaluation | undefined;
+  @ViewChild(KnowledgeSystemComponent) knowledgeSystemComponent!: KnowledgeSystemComponent;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private route: ActivatedRoute) {}
 
   ngOnInit() {
-    this.http.get<Category[]>('../../assets/category-data.json').subscribe(data => {
-      this.categoryValues = data[0].categoryValues;
-      this.characteristicEvaluation = this.categoryValues[0].characteristicEvaluation;
+    this.route.queryParams.subscribe(param => {
+      const category = param['catName'];
+      if (category) 
+        this.retrieveSingleDataItem(category);
+      else 
+        this.retrieveAllData();      
     });
+  }
+
+  retrieveAllData(){
+    this.http.get<CategoryValue[]>(`http://localhost:8080/api/v1/cat-vals`).subscribe(catVals =>{
+      this.categoryValues = catVals; 
+    });
+  }
+
+  retrieveSingleDataItem(categoryName: string){
+    this.http.get<CategoryValue[]>(`http://localhost:8080/api/v1/cat-val/${categoryName}`).subscribe(categoryValue =>{
+      this.categoryValues = categoryValue; 
+    });
+  }
+
+  showKnowledgeSystem(catVal: string){
+    this.knowledgeSystemComponent.retrieveCharacteristicEval(catVal);
   }
 
 }

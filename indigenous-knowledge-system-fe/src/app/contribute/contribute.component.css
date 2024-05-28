@@ -4,12 +4,13 @@ form {
     align-items: center;
   }
   
-  select, input {
+  select, #basic-input {
     margin-bottom: auto;
     width: 100%;
     padding: 5px;
     border: 1px solid burlywood;
-    border-radius: 4px;
+    border-radius: 4px;    
+    background-color: rgb(231, 238, 238);
   }
   
   label {
@@ -30,3 +31,27 @@ form {
     margin-top: 25px;
     width: 80%;
   }
+
+
+  .combined-input {
+    display: flex; /* Arrange input and select side-by-side */
+    width: 100%; /* Adjust width as needed */
+    border: 1px solid #ccc; /* Add a common border */
+    background-color: rgb(231, 238, 238);
+    border-radius: 4px; /* Add rounded corners */
+  }
+  
+  #inputText,
+  #selectDropdown {
+    padding: 5px; /* Consistent padding for both elements */
+    border: none; /* Remove default borders */
+    outline: none; /* Remove default outline */
+  }
+  
+  #selectDropdown {
+    width: 90%;
+    -webkit-appearance: none; /* Remove default dropdown styling (optional) */
+    appearance: none; /* Remove default dropdown styling (optional) */
+    background-color: inherit; /* Inherit background color from .combined-input */
+  }
+  
