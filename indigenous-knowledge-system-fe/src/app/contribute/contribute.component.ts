@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {Category, CategoryValue, CharacteristicEvaluation} from '../../util/util';
+import { NotificationService } from '../notification.service';
 
 @Component({
   selector: 'app-contribute',
@@ -21,7 +22,7 @@ export class ContributeComponent implements OnInit{
   categoryValue?: CategoryValue;
   savedCategory?: Category;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private notification: NotificationService) {}
 
   ngOnInit() {
     this.http.get<Category[]>('http://localhost:8080/api/v1/categories').subscribe(resp => {
@@ -43,20 +44,20 @@ export class ContributeComponent implements OnInit{
       "catName": this.category,
       "categoryValues": [this.categoryValue]
     }
-    console.log(`submitting request ... ${JSON.stringify(this.savedCategory)}`)
+    this.evaluation = "";
+    this.characteristic = "";
+    this.categoryItem = "";
+    this.category = "";
     this.submitRequest(this.savedCategory);
   }
 
   disabled(){
-    if(this.category && this.categoryItem && this.characteristic && this.evaluation){
-      return (
-        this.isEmpty(this.category) && 
-        this.isEmpty(this.categoryItem) && 
-        this.isEmpty(this.characteristic) && 
-        this.isEmpty(this.evaluation)
-      )
+    if(this.category && this.categoryItem && this.characteristic && this.evaluation
+      && this.evaluation != "" && this.characteristic != "" && this.categoryItem != "" && this.category != ""
+    ){
+      return false;
     }
-    return false;
+    return true;
   }
 
   isEmpty(value: string | null | undefined): boolean {
@@ -66,12 +67,10 @@ export class ContributeComponent implements OnInit{
   submitRequest(category: Category): void{
     this.http.post<Category>("http://localhost:8080/api/v1/add-category", this.savedCategory).subscribe(
       (response) => {
-        console.log('Request successfully submitted', response);
-        // show dialog here
+        this.notification.showSuccess(`Successfully saved new ${response.catName} record`);
       },
       (error) => {
-        console.error('Error making request', error);
-        // show dialog here
+        this.notification.showError(`Error saving response ${error.message}`)
       }
     );
   }

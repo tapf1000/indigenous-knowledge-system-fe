@@ -48,8 +48,10 @@ form {
     outline: none; /* Remove default outline */
   }
   
+  #inputText{
+    width: 50%;
+  }
   #selectDropdown {
-    width: 90%;
     -webkit-appearance: none; /* Remove default dropdown styling (optional) */
     appearance: none; /* Remove default dropdown styling (optional) */
     background-color: inherit; /* Inherit background color from .combined-input */

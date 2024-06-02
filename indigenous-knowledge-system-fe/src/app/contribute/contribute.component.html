@@ -2,14 +2,14 @@
     <div>
       <label for="category">Category:</label>
       <div class="combined-input">
-        <input id="inputText"id="inputText" type="text" placeholder="Select an option from existin categories or type to add new category" name="category" [(ngModel)]="category">
+        <input id="inputText"id="inputText" type="text" placeholder="Select from existing categories or type new" name="category" [(ngModel)]="category">
         <select id="selectDropdown"id="selectDropdown" name="category" [(ngModel)]="category" *ngIf="categoryNames.length > 0">
           <option [value]="categoryName" *ngFor="let categoryName of categoryNames">{{categoryName}}</option>
         </select>
       </div>
     </div>
     <div>
-        <label for="categoryItem">CategoryItem:</label>
+        <label for="categoryItem">Category Item:</label>
         <input type="text" id="basic-input" name="categoryItem" [(ngModel)]="categoryItem" placeholder="">
     </div>
     <div>
